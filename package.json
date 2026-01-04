@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
     "db:init": "node initdb.js"
   },
   "dependencies": {
@@ -19,9 +18,5 @@
     "react": "^18",
     "react-dom": "^18",
     "rimraf": "^6.1.2"
-  },
-  "devDependencies": {
-    "eslint": "^9.39.2",
-    "eslint-config-next": "14.0.3"
   }
 }
