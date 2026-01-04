@@ -9,7 +9,7 @@ const MealsPage = async () => {
     <>
     <header className={classes.header}>
       <h1>
-        Delicious Meals, Created{' '}
+        Delicious Meals, Created{""}
         <span className={classes.highlight}>by you</span> 
       </h1>
       <p>Choose your favorite recipe and cook it yourself. Its easy and fun!</p>
