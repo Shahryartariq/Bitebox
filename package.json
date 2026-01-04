@@ -6,12 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:init": "node initdb.js"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
+    "better-sqlite3": "^12.5.0",
+    "dotenv": "^17.2.3",
+    "dotenv-flow": "^4.1.0",
+    "next": "14.0.3",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.3"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "eslint": "^8",
