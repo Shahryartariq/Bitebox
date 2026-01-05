@@ -9,6 +9,7 @@
     "db:init": "node initdb.js"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.962.0",
     "@neondatabase/serverless": "^1.0.2",
     "better-sqlite3": "^12.5.0",
     "dotenv": "^17.2.3",
