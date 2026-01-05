@@ -3,12 +3,26 @@ import { getMeal } from "@/lib/meals";
 import classes from "@/app/meals/[mealSlug]/page.module.css";
 import { notFound } from "next/navigation";
 
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params;
+  const slug = resolvedParams.mealSlug;
+  const meal = await getMeal(slug);
+  if (!meal) {
+    notFound();
+  }
+
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
+
 const MealDetailPage = async ({ params }) => {
   const resolvedParams = await params;
   const slug = resolvedParams.mealSlug;
   const meal = await getMeal(slug);
 
-  if(!meal) {
+  if (!meal) {
     notFound();
   }
 
@@ -30,8 +44,7 @@ const MealDetailPage = async ({ params }) => {
       </header>
 
       <main>
-        <p className={classes.instructions} dangerouslySetInnerHTML={{ __html: meal.instructions }}>   
-        </p>
+        <p className={classes.instructions} dangerouslySetInnerHTML={{ __html: meal.instructions }}></p>
       </main>
     </>
   );
