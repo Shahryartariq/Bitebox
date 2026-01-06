@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getMeal } from "@/lib/meals";
 import classes from "@/app/meals/[mealSlug]/page.module.css";
 import { notFound } from "next/navigation";
+import AiCookingHelper from "@/components/ai/AiCookingHelper";
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
@@ -27,6 +28,7 @@ const MealDetailPage = async ({ params }) => {
   }
 
   meal.instructions = meal.instructions.replace(/\n/g, "<br />");
+  const recipeText = `Recipe Title: ${meal.title}\n\nSummary:\n${meal.summary}\n\nInstructions:\n${meal.instructions}`;
 
   return (
     <>
@@ -43,8 +45,9 @@ const MealDetailPage = async ({ params }) => {
         </div>
       </header>
 
-      <main>
+      <main className={classes.mainContainer}>
         <p className={classes.instructions} dangerouslySetInnerHTML={{ __html: meal.instructions }}></p>
+        <AiCookingHelper recipe={recipeText} />
       </main>
     </>
   );

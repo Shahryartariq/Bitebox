@@ -60,18 +60,31 @@
   font-size: 1.5rem;
 }
 
+
+.mainContainer {
+  display: flex;
+  justify-content: center; /* horizontal center of both cards */
+  align-items: flex-start; /* align tops of cards */
+  gap: 2rem; /* space between cards */
+  min-height: 100vh; /* full viewport height */
+  padding: 2rem;
+  background-color: #f9fafb;
+  flex-wrap: wrap; /* wrap on small screens */
+}
+
 .instructions {
   font-size: 1.25rem;
   line-height: 1.5;
-  background-color: #6e6464;
+  background-color: #a9a8a8;
   color: #13120f;
   border-radius: 8px;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
   padding: 2rem;
-  max-width: 60rem;
-  margin: 2rem auto;
+  max-width: 30rem; /* width of the card */
+  flex: 1 1 300px; /* responsive flex basis */
   animation: fade-slide-in-from-bottom 1s ease-out forwards;
 }
+
 
 .loading {
   font-size: 3rem;
